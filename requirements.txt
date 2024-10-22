@@ -1,0 +1,11 @@
+tensorflow
+keras
+numpy
+pandas
+scikit-learn
+matplotlib
+shutil
+seaborn
+opencv
+h5py
+math
