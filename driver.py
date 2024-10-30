@@ -41,15 +41,15 @@ def optinal_fusion_model():
     model.save("models/final_trained/trained_model_30_50.h5")
     
 def display_results():
-    label_df = pd.read_csv('Dataset_EE798/labels.csv')
+    label_df = pd.read_csv('coords_correspondence/fusion_dataset_converted_npz/labels.csv')
     label_df.columns = ['id', 'people']
 
-    img = np.load('Dataset_EE798/images.npy')
+    img = np.load('coords_correspondence/fusion_dataset_converted_npz/images.npy')
     labels = np.array(label_df['people'])
 
     x_train, x_test, y_train, y_test = train_test_split(img, labels, test_size=0.3)
 
-    model = load_model('trained_model_30_50.h5')
+    model = load_model('models/final_trained/trained_model_30_50.h5')
     predictions = model.predict(x_test).flatten()
     temp = []
     for prediction in predictions:
