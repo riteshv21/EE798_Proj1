@@ -36,7 +36,7 @@ def optinal_fusion_model():
 
     model.summary()
 
-    history = model.fit(x_train, y_train, validation_data=(x_test, y_test), epochs=50, batch_size=8)
+    history = model.fit(x_train, y_train, validation_data=(x_test, y_test), epochs=80, batch_size=8)
 
     model.save("models/final_trained/trained_model_30_50.h5")
     
